@@ -1,20 +1,19 @@
-/* ========== Reset ========== */
+/* ===== Grundeinstellungen ===== */
 * {
   margin: 0;
   padding: 0;
-   box-sizing: border-box;
+  box-sizing: border-box;
 }
 
-/* ========== Body ========== */
 body {
   font-family: "Segoe UI", Arial, sans-serif;
-  background: linear-gradient(to bottom right, #f0f4f8, #d0e3ff);
+  background: linear-gradient(to bottom right, #f4f4f9, #d7e3ff);
   color: #333;
   line-height: 1.6;
   padding: 20px;
 }
 
-/* ========== Header ========== */
+/* =====  Header und Links  ===== */
 header {
   text-align: center;
   background-color: #7203a5;
@@ -24,49 +23,113 @@ header {
   margin-bottom: 30px;
 }
 
-header h1 {
-  font-size: 2rem;
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+nav a {
+  color: white;
+  text-decoration: none;
+  margin: 0 10px;
+  font-weight: bold;
 }
 
-/* ========== Image ========== */
-img {
-  display: block;
-  margin: 20px auto;
-  border-radius: 15px;
-  width: 200px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+nav a:hover {
+  text-decoration: underline;
 }
 
-/* ========== Content ========== */
-p {
-  text-align: center;
-  font-size: 1.1rem;
-  margin-bottom: 20px;
-}
-
-/* ========== Contact Section ========== */
-h2 {
+/* =====  Allgemeine Abschnitte  ===== */
+h1, h2, h3 {
   color: #7203a5;
   text-align: center;
-  margin-top: 40px;
+  margin-bottom: 15px;
+}
+
+p, li {
+  text-align: center;
+  margin-bottom: 10px;
 }
 
 ul {
   list-style: none;
-  text-align: center;
-  margin-top: 10px;
+  padding: 0;
 }
 
-ul li {
-  padding: 5px;
+/* =====  Buttons  ===== */
+button {
+  background-color: #1f8fff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
   font-weight: bold;
 }
 
-/* ========== Footer ========== */
+button:hover {
+  background-color: #08459f;
+}
+
+/* =====  Footer  ===== */
 footer {
-  margin-top: 40px;
   text-align: center;
+  margin-top: 40px;
   font-size: 0.9rem;
   color: #555;
+}
+/* ===== Container ===== */
+.container {
+  max-width: 1100px;   /* عرض أقصى للمحتوى */
+  margin: 0 auto;      /* يوسّط الحاوية أفقياً */
+  padding: 0 16px;     /* مساحات داخلية عند الحواف */
+}
+
+/* ===== Nav ===== */
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+/* ===== Projects grid mit Flexbox ===== */
+.projects {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center; /* يوسّط البطاقات */
+  margin-top: 20px;
+}
+
+.project-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(16,24,40,0.08);
+  padding: 18px;
+  flex: 1 1 280px;    /* سلوك التمدد/الانكماش، والعرض الأساسي */
+  max-width: 320px;   /* لا تتوسع البطاقة أكثر من هذا */
+  text-align: left;   /* محتوى البطاقة ينسق لليسار */
+}
+
+/* إذا أردت العناوين داخل البطاقة مركزة */
+.project-card h3 {
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+/* ===== تحسين الصورة داخل البطاقات ===== */
+.project-card img {
+  width: 100%;
+  border-radius: 8px;
+  display: block;
+  margin-bottom: 12px;
+}
+
+/* ===== Responsive: شاشات صغيرة ===== */
+@media (max-width: 600px) {
+  .projects {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .container {
+    padding: 0 12px;
+  }
 }
